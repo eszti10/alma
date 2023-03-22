@@ -8,5 +8,6 @@
 </head>
 <body>
     <p>{{ $post }}</p>
+    <p>{{ $length }}</p>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+
+Route::get('/posts/{post}',[PostsController::class,'show']);
 
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('kapcsolat');
 
 
 //Route::view('/contact', 'contact');
@@ -35,12 +39,16 @@ Route::get('/valtozok', function () {
 
 //Route::view('/valtozok' , 'valtozok', ['$val' => 'eszti']);
 
+
+/*
 Route::get('/pass-array', function () {
     $tasks = [
       'Go to the store',
       'Go to the market',
       'Go to the work'
     ];
+
+*/
 
     /*return view('tasks-list', [
       'tasks' => $tasks
@@ -49,6 +57,9 @@ Route::get('/pass-array', function () {
 
     //return view('tasks-list')->withTasks($tasks);
 
+
+
+    /*
     $foobar = 'foobar';
     return view('tasks-list')->with([
         'foo' => $foobar,
@@ -64,15 +75,19 @@ Route::get('/pass-array', function () {
     ]);
   });
 
-
-/*
-  Route::get('/posts/{post}', function ($post) {
-    return view('post', [
-      'post' => $post
-    ]);
-  });
 */
 
+
+
+//   Route::get('/posts/{post}', function ($post) {
+//     return view('post', [
+//       'post' => $post
+//     ]);
+//   });
+
+
+
+/*
   Route::get('/posts/{post}', function ($post) {
     $posts = [
       'first-post' => 'Hello, this is my first blog post!',
@@ -89,4 +104,4 @@ Route::get('/pass-array', function () {
   });
 
 
-
+*/
